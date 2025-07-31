@@ -1,6 +1,6 @@
-# MovieMowa - Advanced Movie Ticket Booking System
+# MovieMasti - Advanced Movie Ticket Booking System
 
-MovieMowa is a modern, full-stack movie ticket booking platform built with the MERN stack (MongoDB, Express.js, React, Node.js). Experience cinema like never before with our intuitive interface and advanced features.
+MovieMasti is a modern, full-stack movie ticket booking platform built with the MERN stack (MongoDB, Express.js, React, Node.js). Experience cinema like never before with our intuitive interface and advanced features.
 
 ## ✨ Features
 
