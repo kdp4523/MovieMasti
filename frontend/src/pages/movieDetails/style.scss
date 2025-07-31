@@ -1,0 +1,317 @@
+@import "../../mixins.scss";
+
+.movieDetailsContainer {
+  min-width: 300px;
+  position: relative;
+  padding: 80px 20px;
+  color: white;
+  min-height: 100vh;
+  background: 
+    linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(229,9,20,0.5) 100%),
+    url('https://assets.nflxext.com/ffe/siteui/vlv3/ab4b0b22-2ddf-4d48-ae88-c201ae0267e2/0efe6360-4f6d-4b10-beb6-81e0762cfe81/IN-en-20231030-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+
+  .detailsContainer {
+    max-width: 1200px;
+    margin: 30px auto 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: 30px;
+
+    @include md {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 40px;
+    }
+
+    .likeButton {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      cursor: pointer;
+      background: rgba(20, 20, 20, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      font-size: 24px;
+      color: white;
+      border: 1px solid rgba(229, 9, 20, 0.4);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+      z-index: 2;
+
+      &:hover {
+        transform: scale(1.1);
+        background: rgba(229, 9, 20, 0.2);
+        color: #e50914;
+      }
+
+      &.liked {
+        color: #e50914;
+        background: rgba(229, 9, 20, 0.3);
+      }
+    }
+
+    .left {
+      position: relative;
+      align-self: center;
+      
+      img {
+        height: 350px;
+        width: 230px;
+        border-radius: 12px;
+        object-fit: cover;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(229, 9, 20, 0.3);
+        transition: all 0.3s ease;
+
+        @include md {
+          height: 400px;
+          width: 270px;
+        }
+
+        &:hover {
+          transform: scale(1.02);
+          box-shadow: 0 12px 30px rgba(229, 9, 20, 0.3);
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 10%;
+        width: 80%;
+        height: 20px;
+        background: rgba(229, 9, 20, 0.2);
+        filter: blur(10px);
+        z-index: -1;
+      }
+    }
+
+    .right {
+      background: rgba(20, 20, 20, 0.9);
+      border-radius: 12px;
+      padding: 25px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      border: 1px solid rgba(229, 9, 20, 0.3);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+
+      @include md {
+        max-width: 600px;
+        margin-left: 0;
+        min-height: 400px;
+      }
+
+      h4 {
+        font-size: 28px;
+        margin: 0 0 10px;
+        color: white;
+        position: relative;
+        padding-bottom: 10px;
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 60px;
+          height: 3px;
+          background: linear-gradient(to right, #e50914, #b00710);
+        }
+      }
+
+      .ratingContainer {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        svg {
+          font-size: 24px;
+          color: #e50914;
+        }
+
+        span {
+          font-size: 18px;
+          font-weight: 600;
+          color: white;
+        }
+      }
+
+      p {
+        font-size: 16px;
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.9);
+        margin: 10px 0;
+
+        @include md {
+          font-size: 17px;
+        }
+      }
+
+      .runtimeContainer {
+        display: flex;
+        gap: 30px;
+        margin-top: 15px;
+
+        div {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+
+          .releaseDate {
+            font-size: 18px;
+            font-weight: 500;
+            color: white;
+          }
+
+          span {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.7);
+          }
+        }
+      }
+
+      .genreTags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+
+        span {
+          background: rgba(229, 9, 20, 0.2);
+          color: white;
+          padding: 5px 15px;
+          border-radius: 20px;
+          font-size: 14px;
+          border: 1px solid rgba(229, 9, 20, 0.4);
+        }
+      }
+    }
+  }
+
+  .bookButtonContainer {
+    margin-top: 30px;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    position: sticky;
+    bottom: 0;
+    background: rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(229, 9, 20, 0.3);
+
+    button {
+      background: linear-gradient(to right, #e50914, #b00710);
+      border: none;
+      height: 50px;
+      width: 200px;
+      border-radius: 8px;
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(229, 9, 20, 0.6);
+        background: linear-gradient(to right, #f40612, #c00812);
+      }
+
+      svg {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .movieDetailsContainer {
+    padding: 60px 15px;
+
+    .detailsContainer {
+      .left img {
+        height: 320px;
+        width: 210px;
+      }
+
+      .right {
+        padding: 20px;
+
+        h4 {
+          font-size: 24px;
+        }
+      }
+    }
+
+    .bookButtonContainer {
+      height: 70px;
+      
+      button {
+        height: 45px;
+        width: 180px;
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .movieDetailsContainer {
+    padding: 50px 10px;
+
+    .detailsContainer {
+      .left img {
+        height: 280px;
+        width: 180px;
+      }
+
+      .right {
+        padding: 15px;
+        gap: 15px;
+
+        h4 {
+          font-size: 22px;
+        }
+
+        p {
+          font-size: 15px;
+        }
+      }
+    }
+
+    .bookButtonContainer {
+      height: 60px;
+      
+      button {
+        height: 40px;
+        width: 160px;
+        font-size: 15px;
+      }
+    }
+  }
+}

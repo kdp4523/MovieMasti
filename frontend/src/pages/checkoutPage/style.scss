@@ -1,0 +1,304 @@
+@import "../../mixins.scss";
+
+.checkoutContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  min-width: 400px;
+  padding: 80px 20px;
+  color: white;
+  background: 
+    linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(229,9,20,0.5) 100%),
+    url('https://assets.nflxext.com/ffe/siteui/vlv3/ab4b0b22-2ddf-4d48-ae88-c201ae0267e2/0efe6360-4f6d-4b10-beb6-81e0762cfe81/IN-en-20231030-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+  .checkout {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .modal {
+      width: 100%;
+      max-width: 600px;
+      background: rgba(20, 20, 20, 0.95);
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid rgba(229, 9, 20, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      position: relative;
+      transition: all 0.3s ease;
+
+      h1 {
+        font-size: 24px;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 20px;
+        color: white;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        position: relative;
+        
+        &::after {
+          content: '';
+          display: block;
+          width: 100px;
+          height: 3px;
+          background: linear-gradient(to right, #e50914, #b00710);
+          margin: 10px auto 0;
+          border-radius: 3px;
+        }
+      }
+
+      .imageDetailsContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @include md {
+          flex-direction: row;
+          gap: 30px;
+          align-items: flex-start;
+        }
+
+        .mediaImage {
+          position: relative;
+          align-self: center;
+          border-radius: 10px;
+          overflow: hidden;
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+          
+          img {
+            height: 300px;
+            width: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            
+            &:hover {
+              transform: scale(1.03);
+            }
+          }
+          
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: linear-gradient(to top, rgba(20, 20, 20, 0.8), transparent);
+          }
+        }
+
+        .col {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          width: 100%;
+          max-width: 400px;
+
+          .row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            
+            span {
+              font-weight: 600;
+              font-size: 15px;
+              color: rgba(255, 255, 255, 0.8);
+              min-width: 80px;
+            }
+            
+            p {
+              font-size: 15px;
+              font-weight: 500;
+              color: white;
+              margin: 0;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              
+              &::first-letter {
+                text-transform: capitalize;
+              }
+            }
+          }
+
+          .ticketsContainer {
+            .tickets {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              
+              span {
+                font-size: 15px;
+                font-weight: 600;
+                color: rgba(255, 255, 255, 0.8);
+                min-width: 80px;
+              }
+              
+              ul {
+                list-style-type: none;
+                padding: 0;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 8px;
+                
+                li {
+                  font-size: 14px;
+                  color: white;
+                  background: rgba(229, 9, 20, 0.3);
+                  padding: 4px 12px;
+                  border-radius: 20px;
+                  border: 1px solid rgba(229, 9, 20, 0.5);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      button {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: transparent;
+        color: white;
+        border: 2px solid #e50914;
+        height: 36px;
+        width: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        transition: all 0.3s ease;
+        
+        &:hover {
+          background: #e50914;
+          transform: rotate(90deg);
+        }
+        
+        svg {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .confirmation {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      background: rgba(20, 20, 20, 0.95);
+      border-radius: 12px;
+      padding: 30px;
+      border: 1px solid rgba(229, 9, 20, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+
+      .success {
+        background: linear-gradient(135deg, #2ecc71, #27ae60);
+        border-radius: 50%;
+        height: 80px;
+        width: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 4px 15px rgba(46, 204, 113, 0.4);
+        
+        svg {
+          color: white;
+          font-size: 40px;
+        }
+      }
+
+      p {
+        font-weight: 600;
+        font-size: 22px;
+        color: white;
+        margin: 10px 0;
+        
+        @include md {
+          font-size: 24px;
+        }
+      }
+
+      span {
+        cursor: pointer;
+        font-size: 16px;
+        color: #e50914;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .checkoutContainer {
+    padding: 60px 15px;
+    
+    .checkout {
+      gap: 20px;
+      
+      .modal {
+        padding: 20px;
+        
+        h1 {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .checkoutContainer {
+    padding: 50px 10px;
+    
+    .checkout {
+      .modal {
+        padding: 15px;
+        
+        .imageDetailsContainer {
+          .mediaImage img {
+            height: 250px;
+            width: 160px;
+          }
+        }
+      }
+      
+      .confirmation {
+        padding: 20px;
+        
+        .success {
+          height: 60px;
+          width: 60px;
+          
+          svg {
+            font-size: 30px;
+          }
+        }
+        
+        p {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

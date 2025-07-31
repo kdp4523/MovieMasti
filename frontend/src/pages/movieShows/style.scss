@@ -1,0 +1,260 @@
+@import "../../mixins.scss";
+
+.movieShowsContainer {
+  min-height: 100vh;
+  min-width: 300px;
+  padding: 80px 20px;
+  color: white;
+  background: 
+    linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(229,9,20,0.5) 100%),
+    url('https://assets.nflxext.com/ffe/siteui/vlv3/ab4b0b22-2ddf-4d48-ae88-c201ae0267e2/0efe6360-4f6d-4b10-beb6-81e0762cfe81/IN-en-20231030-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+  .wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    width: 90%;
+
+    h1 {
+      color: white;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+      font-size: 2.2rem;
+      position: relative;
+      text-align: center;
+      
+      &::after {
+        content: '';
+        display: block;
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(to right, #e50914, #b00710);
+        margin: 15px auto 0;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(229, 9, 20, 0.5);
+      }
+      
+      @include md {
+        font-size: 2.5rem;
+      }
+    }
+
+    .noShowsContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+      min-height: 60vh;
+      background-color: rgba(20, 20, 20, 0.8);
+      border-radius: 12px;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 40px;
+      text-align: center;
+      border: 1px solid rgba(229, 9, 20, 0.3);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      
+      svg {
+        font-size: 60px;
+        color: rgba(229, 9, 20, 0.7);
+        filter: drop-shadow(0 2px 4px rgba(229, 9, 20, 0.5));
+      }
+      
+      h2 {
+        color: white;
+        font-size: 1.5rem;
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+      }
+      
+      p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1rem;
+        max-width: 500px;
+        line-height: 1.6;
+      }
+    }
+
+    .showsContainer {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 25px;
+      
+      @include sm {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      @include md {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      
+      @include lg {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      li {
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        background-color: rgba(20, 20, 20, 0.8);
+        border-radius: 12px;
+        padding: 20px;
+        border: 1px solid rgba(229, 9, 20, 0.2);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 25px rgba(229, 9, 20, 0.3);
+          border-color: rgba(229, 9, 20, 0.4);
+          
+          svg {
+            color: #e50914;
+          }
+        }
+
+        .showHeader {
+          display: flex;
+          align-items: flex-start;
+          gap: 15px;
+          
+          svg {
+            transition: all 0.3s ease;
+            margin-top: 4px;
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.8);
+          }
+          
+          h3 {
+            color: white;
+            font-size: 1.2rem;
+            margin: 0;
+            flex: 1;
+          }
+        }
+
+        .right {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          
+          button {
+            width: 100%;
+            background-color: transparent;
+            color: white;
+            border: 2px solid #e50914;
+            height: 40px;
+            padding: 0 15px;
+            border-radius: 6px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            
+            svg {
+              color: white;
+              font-size: 18px;
+              transition: all 0.3s ease;
+            }
+            
+            &:hover {
+              background-color: #e50914;
+              transform: translateY(-2px);
+              box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4);
+              
+              svg {
+                color: white;
+              }
+            }
+          }
+          
+          .showDetails {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            
+            div {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              
+              span {
+                font-size: 14px;
+                font-weight: 500;
+                color: rgba(255, 255, 255, 0.7);
+                min-width: 80px;
+              }
+              
+              p {
+                font-size: 14px;
+                color: white;
+                margin: 0;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .movieShowsContainer {
+    padding: 60px 15px;
+    
+    .wrapper {
+      .showsContainer {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+      
+      .noShowsContainer {
+        padding: 30px;
+        width: 90%;
+        
+        svg {
+          font-size: 50px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .movieShowsContainer {
+    padding: 50px 10px;
+    
+    .wrapper {
+      .showsContainer {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      
+      .noShowsContainer {
+        padding: 25px 20px;
+        
+        svg {
+          font-size: 40px;
+        }
+        
+        h2 {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}

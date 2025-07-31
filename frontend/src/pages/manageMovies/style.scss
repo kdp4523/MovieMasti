@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.manageMoviesContainer {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #232946 0%, #16161a 100%);
+  color: #eaeaea;
+  padding: 60px 0 40px 0;
+  font-family: 'Inter', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pageTitle {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #00cfc8;
+  margin-bottom: 18px;
+  letter-spacing: -1px;
+  text-align: center;
+}
+
+.pageTitle .accent {
+  color: #ff6b35;
+  background: linear-gradient(45deg, #00cfc8, #ff6b35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.pageDescription {
+  text-align: center;
+  color: #bcbcbc;
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+}
+
+.noMoviesMessage {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: rgba(36, 37, 42, 0.95);
+  border-radius: 15px;
+  border: 1.5px solid #00cfc8;
+  color: #eaeaea;
+}
+
+.noMoviesMessage h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #ff6b35;
+}
+
+.noMoviesMessage p {
+  color: #bcbcbc;
+  font-size: 1rem;
+}

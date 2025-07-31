@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.addTheatreContainer {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #232946 0%, #16161a 100%);
+  color: #eaeaea;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0 40px 0;
+  font-family: 'Inter', sans-serif;
+
+  .formContainer {
+    background: rgba(36, 37, 42, 0.95);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    border: 1.5px solid rgba(0,255,255,0.08);
+    padding: 40px 32px;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    position: relative;
+    z-index: 1;
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #00cfc8;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+      text-align: center;
+    }
+    .inputContainer, .inputSeatsContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      label {
+        font-size: 13px;
+        color: #00cfc8;
+        font-weight: 600;
+        margin-bottom: 2px;
+      }
+      input {
+        background: rgba(255,255,255,0.07);
+        border: 1.5px solid #232946;
+        border-radius: 8px;
+        color: #eaeaea;
+        font-size: 15px;
+        padding: 12px 14px;
+        font-family: 'Inter', sans-serif;
+        transition: border 0.2s;
+        &:focus {
+          border: 1.5px solid #00cfc8;
+          outline: none;
+          background: rgba(0,255,255,0.06);
+        }
+      }
+    }
+    button {
+      background: linear-gradient(90deg, #00cfc8 0%, #ff6b35 100%);
+      color: #232946;
+      font-weight: 700;
+      border: none;
+      border-radius: 8px;
+      padding: 14px 0;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+      margin-top: 18px;
+      &:hover {
+        background: linear-gradient(90deg, #ff6b35 0%, #00cfc8 100%);
+        transform: translateY(-2px) scale(1.03);
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .addTheatreContainer {
+    .formContainer {
+      padding: 20px 8px;
+    }
+  }
+}

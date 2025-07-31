@@ -1,0 +1,270 @@
+@import "../../mixins.scss";
+
+.seatsPageContainer {
+  min-height: 100vh;
+  min-width: 300px;
+  padding: 80px 20px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: 
+    linear-gradient(135deg, rgba(0,0,0,0.95) 0%, rgba(229,9,20,0.5) 100%),
+    url('https://assets.nflxext.com/ffe/siteui/vlv3/ab4b0b22-2ddf-4d48-ae88-c201ae0267e2/0efe6360-4f6d-4b10-beb6-81e0762cfe81/IN-en-20231030-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    width: 100%;
+    background: rgba(20, 20, 20, 0.9);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(229, 9, 20, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+
+    h1 {
+      color: white;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+      font-size: 2rem;
+      margin-bottom: 30px;
+      position: relative;
+      
+      &::after {
+        content: '';
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(to right, #e50914, #b00710);
+        margin: 15px auto 0;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(229, 9, 20, 0.5);
+      }
+    }
+
+    .seatType {
+      align-self: center;
+      margin-top: 10px;
+      font-size: 18px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 20px;
+    }
+
+    .seats {
+      list-style-type: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 10px;
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+
+      .disable {
+        pointer-events: none;
+        opacity: 0.3;
+        background-color: rgba(229, 9, 20, 0.5);
+        border-color: rgba(229, 9, 20, 0.3);
+      }
+
+      li {
+        cursor: pointer;
+        height: 30px;
+        width: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        border: 2px solid #e50914;
+        border-radius: 6px;
+        background: rgba(229, 9, 20, 0.1);
+        transition: all 0.2s ease;
+        font-size: 12px;
+        font-weight: 500;
+
+        &:hover:not(.disable) {
+          background: rgba(229, 9, 20, 0.3);
+          transform: scale(1.1);
+        }
+
+        &.selected {
+          background: #e50914;
+          box-shadow: 0 0 10px rgba(229, 9, 20, 0.7);
+        }
+      }
+    }
+
+    .row {
+      margin: 30px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      gap: 15px;
+
+      .col {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+        justify-content: center;
+
+        p, span {
+          font-size: 16px;
+          color: rgba(255, 255, 255, 0.9);
+          
+          @include md {
+            font-size: 18px;
+          }
+        }
+
+        .seat-legend {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+
+          .legend-color {
+            height: 20px;
+            width: 20px;
+            border-radius: 4px;
+
+            &.available {
+              background: rgba(229, 9, 20, 0.1);
+              border: 2px solid #e50914;
+            }
+
+            &.selected {
+              background: #e50914;
+            }
+
+            &.booked {
+              background: rgba(229, 9, 20, 0.5);
+              border: 2px solid rgba(229, 9, 20, 0.3);
+            }
+          }
+        }
+      }
+    }
+
+    button {
+      cursor: pointer;
+      align-self: center;
+      height: 50px;
+      padding: 0 30px;
+      border: none;
+      font-size: 16px;
+      border-radius: 8px;
+      background: linear-gradient(to right, #e50914, #b00710);
+      color: white;
+      font-weight: 500;
+      letter-spacing: 0.8px;
+      transition: all 0.3s ease;
+      margin-top: 20px;
+      box-shadow: 0 4px 15px rgba(229, 9, 20, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(229, 9, 20, 0.6);
+        background: linear-gradient(to right, #f40612, #c00812);
+      }
+
+      &:disabled {
+        background: gray;
+        transform: none;
+        box-shadow: none;
+        cursor: not-allowed;
+        opacity: 0.7;
+      }
+
+      @include md {
+        height: 55px;
+        font-size: 18px;
+        padding: 0 40px;
+      }
+    }
+  }
+}
+
+/* Screen indicator */
+.screen-indicator {
+  width: 80%;
+  height: 20px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.1), transparent);
+  border-radius: 50%/10px;
+  margin: 0 auto 30px;
+  position: relative;
+  text-align: center;
+  color: rgba(255,255,255,0.7);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .seatsPageContainer {
+    padding: 60px 15px;
+    
+    .wrapper {
+      padding: 25px;
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      .seats {
+        grid-template-columns: repeat(8, 1fr);
+        gap: 8px;
+        
+        li {
+          height: 25px;
+          width: 25px;
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .seatsPageContainer {
+    padding: 50px 10px;
+    
+    .wrapper {
+      padding: 20px;
+      
+      h1 {
+        font-size: 1.6rem;
+        
+        &::after {
+          width: 60px;
+        }
+      }
+      
+      .seats {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 6px;
+        
+        li {
+          height: 20px;
+          width: 20px;
+        }
+      }
+      
+      button {
+        height: 45px;
+        font-size: 15px;
+        padding: 0 25px;
+      }
+    }
+  }
+}

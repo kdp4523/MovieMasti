@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
+
+.masti-home-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #7f53ac 0%, #647dee 50%, #ff6a88 100%);
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+  padding-bottom: 60px;
+}
+
+.masti-hero {
+  width: 100%;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: none;
+  margin-bottom: 0;
+}
+
+.masti-hero-glass {
+  background: rgba(255,255,255,0.10);
+  border-radius: 32px;
+  box-shadow: 0 8px 32px rgba(127,83,172,0.18);
+  padding: 48px 32px 40px 32px;
+  max-width: 600px;
+  width: 95%;
+  margin: 60px auto 0 auto;
+  backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255,255,255,0.18);
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 1s cubic-bezier(0.4,0,0.2,1);
+}
+
+.masti-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+  justify-content: center;
+}
+.masti-logo-icon {
+  font-size: 2.2rem;
+  filter: drop-shadow(0 2px 8px #ff6a88);
+}
+.masti-logo-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ff6a88, #7f53ac, #647dee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+.masti-hero-headline {
+  font-size: 2.5rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  margin: 0 0 18px 0;
+  text-align: center;
+  letter-spacing: -1px;
+  .masti-gradient {
+    background: linear-gradient(90deg, #ff6a88, #7f53ac, #647dee);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+.masti-hero-desc {
+  font-size: 1.15rem;
+  color: #f3eaff;
+  text-align: center;
+  margin-bottom: 32px;
+  .masti-highlight {
+    color: #ffd700;
+    font-weight: 600;
+  }
+}
+.masti-hero-actions {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+.masti-btn {
+  border: none;
+  border-radius: 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 14px 32px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 16px rgba(127,83,172,0.10);
+}
+.masti-btn-primary {
+  background: linear-gradient(90deg, #ff6a88 0%, #7f53ac 100%);
+  color: #fff;
+}
+.masti-btn-secondary {
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  border: 1.5px solid #ff6a88;
+}
+.masti-btn-link {
+  background: none;
+  color: #ffd700;
+  font-weight: 700;
+  padding: 0 8px;
+  box-shadow: none;
+  border: none;
+  font-size: 1.1rem;
+  text-decoration: underline;
+  transition: color 0.2s;
+  &:hover {
+    color: #ff6a88;
+  }
+}
+.masti-btn-mini {
+  background: linear-gradient(90deg, #647dee 0%, #ff6a88 100%);
+  color: #fff;
+  font-size: 0.95rem;
+  padding: 8px 18px;
+  border-radius: 18px;
+  font-weight: 600;
+  border: none;
+  margin-top: 8px;
+  transition: background 0.2s;
+  &:hover {
+    background: linear-gradient(90deg, #ff6a88 0%, #647dee 100%);
+  }
+}
+
+.masti-features {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin: 48px auto 32px auto;
+  max-width: 1100px;
+  flex-wrap: wrap;
+}
+.masti-feature-card {
+  background: rgba(255,255,255,0.13);
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(127,83,172,0.10);
+  padding: 32px 28px;
+  min-width: 220px;
+  max-width: 320px;
+  flex: 1 1 220px;
+  text-align: center;
+  border: 1.5px solid rgba(255,255,255,0.18);
+  backdrop-filter: blur(8px);
+  .masti-feature-icon {
+    font-size: 2.2rem;
+    margin-bottom: 12px;
+    display: block;
+    filter: drop-shadow(0 2px 8px #ff6a88);
+  }
+  h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #ffd700;
+  }
+  p {
+    color: #f3eaff;
+    font-size: 1rem;
+    margin: 0;
+  }
+}
+
+.movies-section {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 32px 0 0 0;
+}
+.masti-movies-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding: 0 16px;
+}
+.masti-movies-header h2 {
+  font-size: 2rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.masti-movies-icon {
+  color: #ffd700;
+  font-size: 1.5em;
+}
+.masti-movies-header .masti-gradient {
+  background: linear-gradient(90deg, #ff6a88, #7f53ac, #647dee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.masti-movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+  padding: 0 16px;
+}
+.masti-movie-card {
+  background: rgba(255,255,255,0.13);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(127,83,172,0.10);
+  overflow: hidden;
+  border: 1.5px solid rgba(255,255,255,0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: fadeInUp 0.7s cubic-bezier(0.4,0,0.2,1);
+  animation-delay: var(--delay, 0s);
+  animation-fill-mode: both;
+  &:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px #ff6a8833;
+  }
+}
+.masti-movie-poster {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 2px 12px #7f53ac33;
+  background: #fff;
+}
+.masti-movie-info {
+  padding: 18px 12px 20px 12px;
+  width: 100%;
+  text-align: center;
+  h4 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ff6a88;
+    margin-bottom: 8px;
+    margin-top: 0;
+    font-family: 'Inter', sans-serif;
+  }
+}
+.masti-no-movies {
+  color: #ffd700;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 40px 0;
+}
+.masti-loader-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .masti-hero-glass {
+    padding: 32px 8px 28px 8px;
+  }
+  .masti-features {
+    gap: 18px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .masti-movies-grid {
+    gap: 18px;
+  }
+}
+@media (max-width: 600px) {
+  .masti-hero-glass {
+    padding: 18px 2vw 18px 2vw;
+    border-radius: 18px;
+  }
+  .masti-logo-title {
+    font-size: 1.3rem;
+  }
+  .masti-hero-headline {
+    font-size: 1.3rem;
+  }
+  .masti-movie-poster {
+    height: 180px;
+  }
+  .masti-feature-card {
+    padding: 18px 8px;
+    min-width: 0;
+    max-width: 100vw;
+  }
+}
